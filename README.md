@@ -1,28 +1,50 @@
-== README
+# Table design
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Users
+### association
+- has_many :books
+- has_many :orders
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+|culmn|type|
+|-----|----|
+|name|string|
+|email|string|
+|password|string|
+|address|string|
+|profile|text|
+|avatar|string|
+|account_number|integer|
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## Books
+### association
+- has_one :order
+- has_many :images
+- belongs_to :user
+
+|culumn|type|
+|------|----|
+|title|string|
+|price|integer|
+|description|text|
+|status|integer|
+|user_id|references|
+
+## images
+### association
+- belongs_to :book
+
+|culumn|type|
+|------|----|
+|content|string|
+|book_id|references|
+
+## orders
+### association
+- belongs_to :user
+- belongs_to :book
+
+|culumn|type|
+|------|----|
+|book_id|references|
+|user_id|references|
