@@ -8,6 +8,8 @@
 |culmn|type|
 |-----|----|
 |name|string|
+|first_name|string|
+|family_name|string|
 |email|string|
 |password|string|
 |address|string|
