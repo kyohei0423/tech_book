@@ -32,7 +32,7 @@
 |status|integer|
 |user_id|references|
 
-## images
+## Images
 ### association
 - belongs_to :book
 
@@ -41,7 +41,7 @@
 |content|string|
 |book_id|references|
 
-## orders
+## Orders
 ### association
 - belongs_to :user
 - belongs_to :book
