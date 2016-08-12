@@ -45,4 +45,8 @@ group :development do
   gem 'spring'
 end
 
+group :production, :staging do
+  gem 'rails_12factor'
+end
+
 gem 'bootstrap-sass'
