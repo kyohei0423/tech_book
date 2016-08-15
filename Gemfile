@@ -50,3 +50,4 @@ group :production, :staging do
 end
 
 gem 'bootstrap-sass'
+gem 'devise'
