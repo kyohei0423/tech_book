@@ -152,7 +152,11 @@
   								<div class="navbar-mini">
   									<ul class="clearfix">
   										<li class="user-action">
-  											<a data-toggle="modal" href="#loginModal" class="btn">ログイン／新規登録</a>
+                        <% if user_signed_in? %>
+                          <%= link_to "サインアウト", destroy_user_session_path, method: :delete,  class: "btn" %>
+                        <% else %>
+                          <a data-toggle="modal" href="#loginModal" class="btn">ログイン／新規登録</a>
+                        <% end %>
   										</li>
   									</ul>
   								</div>
