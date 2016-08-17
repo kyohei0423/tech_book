@@ -88,7 +88,6 @@
           <!-- End | Lost Password Form -->
           <!-- Begin | Register Form -->
           <%= form_for(resource, as: resource_name, url: user_registration_path, html: { id: "register-form", style: "display: none;" }) do |f| %>
-            <%= devise_error_messages! %>
             <div class="modal-body pb-5">
               <h3 class="text-center heading mt-10 mb-20">新規登録</h3>
               <button class="btn btn-facebook btn-block">Facebookで登録</button>
