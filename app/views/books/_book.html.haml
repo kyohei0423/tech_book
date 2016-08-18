@@ -1,0 +1,17 @@
+.col-md-6.col-lg-4.pl-0.ml-0
+  .package-list-item.clearfix.pl-15
+    .image
+      = link_to image_tag(book.image.content), book_path(book)
+      .absolute-in-image
+        .duration
+          %span デザイン
+    .content
+      .row.gap-10
+        .col-sm-12.col-md-12
+          %h5
+            = link_to book.title, book_path(book)
+          %p.line18
+            = book.description
+        .col-sm-12.col-md-12.text-left-sm
+          .price
+            #{book.price}円

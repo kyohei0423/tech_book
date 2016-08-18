@@ -100,8 +100,10 @@
             .container
               .flex-row.flex-align-middle
                 .flex-shrink.flex-columns
-                  %a.navbar-logo{:href => "index.html"}
-                    = image_tag "techbook_logo.png"
+                  - if user_signed_in?
+                    = link_to image_tag("techbook_logo.png"), books_path, class: "navbar-logo"
+                  - else
+                    = link_to image_tag("techbook_logo.png"), root_path, class: "navbar-logo"
                 .flex-columns
                   .pull-right
                     .navbar-mini

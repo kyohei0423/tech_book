@@ -20,7 +20,7 @@
         %aside.sidebar.with-filter
           .sidebar-search-wrapper.bg-light-2
             .sidebar-search-header
-              %h4 再検索
+              %h4 検索
             .sidebar-search-content
               .form-group
                 %select.select2-multi.form-control{"data-placeholder" => "カテゴリを選択", :name => "destination"}
@@ -40,48 +40,7 @@
           .sorting-header
             %p.sorting-lead 50件の検索結果が見つかりました。
         .package-list-item-wrapper.on-page-result-page.clearfix
-          .col-md-6.col-lg-4.pl-0.ml-0
-            .package-list-item.clearfix.pl-15
-              .image
-                = image_tag "books/book1.png"
-                .absolute-in-image
-                  .duration
-                    %span デザイン
-              .content
-                .row.gap-10
-                  .col-sm-12.col-md-12
-                    %h5 ランディングページ・デザインメソッド
-                    %p.line18 ランディングページの開発をするフロントエンドのエンジニアには必須の本になります。
-                  .col-sm-12.col-md-12.text-left-sm
-                    .price 1000円
-          .col-md-6.col-lg-4.pl-0.ml-0
-            .package-list-item.clearfix.pl-15
-              .image
-                = image_tag "books/book1.png"
-                .absolute-in-image
-                  .duration
-                    %span デザイン
-              .content
-                .row.gap-10
-                  .col-sm-12.col-md-12
-                    %h5 ランディングページ・デザインメソッド
-                    %p.line18 ランディングページの開発をするフロントエンドのエンジニアには必須の本になります。
-                  .col-sm-12.col-md-12.text-left-sm
-                    .price 1000円
-          .col-md-6.col-lg-4.pl-0.ml-0
-            .package-list-item.clearfix.pl-15
-              .image
-                = image_tag "books/book1.png"
-                .absolute-in-image
-                  .duration
-                    %span デザイン
-              .content
-                .row.gap-10
-                  .col-sm-12.col-md-12
-                    %h5 ランディングページ・デザインメソッド
-                    %p.line18 ランディングページの開発をするフロントエンドのエンジニアには必須の本になります。
-                  .col-sm-12.col-md-12.text-left-sm
-                    .price 1000円
+          = render @books
         .pager-wrappper.clearfix
           .pager-innner
             .flex-row.flex-align-middle
