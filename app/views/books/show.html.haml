@@ -6,7 +6,7 @@
         %p.line18 WEB制作のプロが教えるLPの考え方、設計、コーディング、コンテンツ制作ガイド
       .flex-column.flex-md-4.flex-align-bottom.flex-sm-12.mt-20-sm
         .text-right.text-left-sm
-          %a.anchor.btn.btn-primary{:href => "#"} 購入ページヘ
+          = link_to "購入ページへ", new_book_order_path(@book), class: 'anchor btn btn-primary'
 / end Page title
 .breadcrumb-wrapper.bg-light-2
   .container
@@ -64,7 +64,7 @@
                         %p
                           = @book.description
               .text-center.pt-10
-                %a.btn.btn-primary.btn-full-width{:href => "#"} 購入ページヘ
+                = link_to "購入ページへ", new_book_order_path(@book), class: 'anchor btn btn-primary'
           .detail-content
             .section-title.text-left
               %h4 関連する書籍
