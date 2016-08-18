@@ -1,0 +1,110 @@
+.breadcrumb-wrapper.bg-light-2
+  .container
+    %ol.breadcrumb-list.booking-step
+      %li
+        %a{:href => ""} トップページ
+        = link_to "トップページ", books_path
+      %li
+        = link_to @book.title, book_path(@book)
+      %li
+        %span お支払い
+      %li
+        %span 完了
+- if @order.errors.any?
+  #error_explanation.alert.alert-danger
+    %h2
+      #{@order.errors.count}件のエラーがあります。
+
+    %ul
+      - @order.errors.full_messages.each do |msg|
+        %li
+          = msg
+.content-wrapper
+  .container
+    .row
+      .col-sm-8.col-md-9{:role => "main"}
+        .text-left
+          %h3
+            = @book.title
+            %small を購入します。
+        .payment-container
+          = form_for [@book, @order], url: book_order_path do |f|
+            .payment-box
+              .payment-header.clearfix
+                .number
+                  \!
+                %h5.heading.mt-0 お届け先詳細
+                %p
+                  %spna.necessary-info *必須情報
+              .payment-content
+                .payment-traveller
+                  .row.gap-0
+                  .form-horizontal
+                    .form-group.gap-20
+                      %label.col-sm-4.col-md-4.control-label
+                        %spna.necessary-info> *
+                        姓:
+                      .col-sm-6.col-md-6
+                        = f.text_field :family_name, class: "form-control"
+                  .form-horizontal
+                    .form-group.gap-20
+                      %label.col-sm-4.col-md-4.control-label
+                        %spna.necessary-info> *
+                        名:
+                      .col-sm-6.col-md-6
+                        = f.text_field :first_name, class: "form-control"
+                  .form-horizontal
+                    .form-group.gap-20
+                      %label.col-sm-4.col-md-4.control-label
+                        %spna.necessary-info> *
+                        郵便番号:
+                      .col-sm-6.col-md-6
+                        = f.text_field :postal_code, class: "form-control", placeholder: 'ハイフンなしで入力してください'
+                  .form-horizontal
+                    .form-group.gap-20
+                      %label.col-sm-4.col-md-4.control-label
+                        %spna.necessary-info> *
+                        住所:
+                      .col-sm-6.col-md-6
+                        = f.text_field :address, class: "form-control"
+            .checkbox-block
+              %input#accept_booking.checkbox{name: "accept_booking", type: "checkbox", required: "required"}
+              %label{:for => "accept_booking"}
+                %a{:href => "#"}> 利用規約
+                及び
+                %a{:href => "#"}> プライバシーポリシー
+                に同意します。
+            .row.mt-20.clearfix
+              .col-sm-12.col-md-12
+                = f.submit "注文を確定する", class: "button btn btn-primary"
+      .col-sm-4.col-md-3.hidden-xs
+        .price-summary-wrapper
+          %h4.heading.mt-0.text-primary.uppercase 注文内容
+          %ul.price-summary-list
+            %li
+              %h6.heading.mt-0.mb-0
+                = @book.title
+              %p.font12.text-light デザイン
+            %li.divider
+            %li
+              %h6.heading.mt-20.mb-5.text-primary.uppercase 価格内訳
+              .row.gap-10.mt-10
+                .col-xs-7.col-sm-7
+                  本体価格
+                .col-xs-5.col-sm-5.text-right
+                  #{@book.price}円
+              .row.gap-10.mt-10
+                .col-xs-7.col-sm-7
+                  送料
+                .col-xs-5.col-sm-5.text-right
+                  送料別
+            %li.divider
+            %li.text-right.font600.font14
+              #{@book.price}円（送料別）
+            %li.total-price
+              .row.gap-10
+                .col-xs-6.col-sm-6
+                  %h5.heading.mt-0.mb-0.text-white 合計金額
+                .col-xs-6.col-sm-6.text-right
+                  %span.block.font20.font600.mb-5 #{@book.price}円
+                  %span（送料別）
