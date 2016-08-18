@@ -1,0 +1,14 @@
+.GridLex-col-4_sm-4_xs-12.mb-20
+  .package-grid-item
+    = link_to book_path(book) do
+      .image
+        = image_tag book.image.content
+        .absolute-in-image
+          .duration
+            %span デザイン
+      .content.clearfix
+        %h6
+          = book.title
+        .absolute-in-content
+          .price
+            #{@book.price}円
