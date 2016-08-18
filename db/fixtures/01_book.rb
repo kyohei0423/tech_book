@@ -1,0 +1,13 @@
+Book.seed(:id,
+  { id: 1, title: "楽しいRuby", price: 1200, description: "Rubyの入門書", status: 0, postage: true, user_id: 5 },
+  { id: 2, title: "パーフェクトRuby on Rails", price: 1000, description: "Ruby on Railsの入門書", status: 0, postage: false, user_id: 5 },
+  { id: 3, title: "実践Ruby on Rails", price: 800, description: "Ruby on Railsの入門書", status: 0, postage: true, user_id: 5 },
+  { id: 4, title: "スッキリわかるJava入門", price: 1500, description: "Javaの入門書", status: 0, postage: true, user_id: 6 },
+  { id: 5, title: "確かな力が身につくJavaScript「超」入門", price: 1200, description: "JavaScriptの入門書", status: 0, postage: false, user_id: 5 },
+  { id: 6, title: "基礎Python 基礎シリーズ", price: 1250, description: "Pythonの入門書", status: 0, postage: true, user_id: 6 },
+  { id: 7, title: "基礎 Ruby on Rails 基礎シリーズ", price: 1700, description: "Ruby on Railsの入門書", status: 0, postage: true, user_id: 5 },
+  { id: 8, title: "JavaScript本格入門", price: 1900, description: "JavaScriptの入門書", status: 0, postage: false, user_id: 5 },
+  { id: 9, title: "Web制作者のためのSassの教科書", price: 1000, description: "Sassの入門書", status: 0, postage: true, user_id: 6 },
+  { id: 10, title: "Web制作者のためのCSS設計の教科書", price: 800, description: "CSS設計の入門書", status: 0, postage: true, user_id: 5 },
+  { id: 11, title: "Web制作者のためのGitHubの教科書", price: 900, description: "Githubの入門書", status: 0, postage: true, user_id: 5 },
+)
