@@ -3,71 +3,32 @@
     %ol.breadcrumb-list.booking-step
       %li
         %a{:href => ""} トップページ
+        = link_to "トップページ", books_path
       %li
-        %a{:href => "#"} 検索結果
-      %li
-        %a{:href => "#"} 詳細画面
+        = link_to @book.title, book_path(@book)
       %li
         %span お支払い
       %li
         %span 完了
+- if @order.errors.any?
+  #error_explanation.alert.alert-danger
+    %h2
+      #{@order.errors.count}件のエラーがあります。
+
+    %ul
+      - @order.errors.full_messages.each do |msg|
+        %li
+          = msg
 .content-wrapper
   .container
     .row
-      .col-sm-12.visible-xs.mb-50
-        .price-summary-wrapper
-          %h4.heading.mt-0.text-primary.uppercase My Trip
-          %ul.price-summary-list
-            %li
-              %h6.heading.mt-0.mb-0 Croatia Sailing &amp; Cruising
-              %p.font12.text-light 4 days 3 nights city tour
-            %li
-              %h6.heading.mt-0.mb-0 Starts in Dubrovnik, Croatia
-              %p.font12.text-light Monday, March 7, 2016
-            %li
-              %h6.heading.mt-0.mb-0 Ends in Hvar, Croatia
-              %p.font12.text-light Thursday, March 10, 2016
-            %li
-              %h6.heading.mt-0.mb-0 What's included
-              %p.font12.text-light Accommodation, Guide, Meals, Bus
-            %li.divider
-            %li
-              %h6.heading.mt-20.mb-5.text-primary.uppercase Price per person
-              .row.gap-10.mt-10
-                .col-xs-7.col-sm-7
-                  Brochure Price
-                .col-xs-5.col-sm-5.text-right
-                  $1458
-              .row.gap-10.mt-10
-                .col-xs-7.col-sm-7
-                  Tax &amp; fee
-                .col-xs-5.col-sm-5.text-right
-                  $0
-            %li.divider
-            %li.text-right.font600.font14
-              $1458
-            %li.divider
-            %li
-              .row.gap-10.font600.font14
-                .col-xs-9.col-sm-9
-                  Number of Travellers
-                .col-xs-3.col-sm-3.text-right
-                  1
-            %li.total-price
-              .row.gap-10
-                .col-xs-6.col-sm-6
-                  %h5.heading.mt-0.mb-0.text-white Amount due
-                  %p.font12 before departure
-                .col-xs-6.col-sm-6.text-right
-                  %span.block.font20.font600.mb-5 $1458
-                  %span.font10.line10.block **Best Price Guarantee
       .col-sm-8.col-md-9{:role => "main"}
         .text-left
           %h3
             = @book.title
             %small を購入します。
         .payment-container
-          %form
+          = form_for [@book, @order], url: book_order_path do |f|
             .payment-box
               .payment-header.clearfix
                 .number
@@ -84,50 +45,38 @@
                         %spna.necessary-info> *
                         姓:
                       .col-sm-6.col-md-6
-                        %input.form-control{:type => "text", :value => "せきや"}/
+                        = f.text_field :family_name, class: "form-control"
                   .form-horizontal
                     .form-group.gap-20
                       %label.col-sm-4.col-md-4.control-label
                         %spna.necessary-info> *
                         名:
                       .col-sm-6.col-md-6
-                        %input.form-control{:type => "text", :value => "じょうじ"}/
-                  .form-horizontal
-                    .form-group.gap-20
-                      %label.col-sm-4.col-md-4.control-label
-                        %spna.necessary-info> *
-                        メールアドレス:
-                      .col-sm-6.col-md-6
-                        %input.form-control{:type => "email", :value => "george-sekiya@hoge.com"}/
-                  .form-horizontal
-                    .form-group.gap-20
-                      %label.col-sm-4.col-md-4.control-label 電話番号:
-                      .col-sm-6.col-md-6
-                        %input.form-control{:type => "email", :value => ""}/
+                        = f.text_field :first_name, class: "form-control"
                   .form-horizontal
                     .form-group.gap-20
                       %label.col-sm-4.col-md-4.control-label
                         %spna.necessary-info> *
                         郵便番号:
                       .col-sm-6.col-md-6
-                        %input.form-control{:type => "email", :value => "150-0000"}/
+                        = f.text_field :postal_code, class: "form-control", placeholder: 'ハイフンなしで入力してください'
                   .form-horizontal
                     .form-group.gap-20
                       %label.col-sm-4.col-md-4.control-label
                         %spna.necessary-info> *
                         住所:
                       .col-sm-6.col-md-6
-                        %input.form-control{:type => "email", :value => "東京都渋谷区道玄坂２丁目新大宗ビル３号館８階"}/
-        .checkbox-block
-          %input#accept_booking.checkbox{:name => "accept_booking", :type => "checkbox", :value => "paymentsCreditCard"}/
-          %label{:for => "accept_booking"}
-            %a{:href => "#"}> 利用規約
-            及び
-            %a{:href => "#"}> プライバシーポリシー
-            に同意します。
-        .row.mt-20.clearfix
-          .col-sm-12.col-md-12
-            %button.btn.btn-primary 注文を確定する
+                        = f.text_field :address, class: "form-control"
+            .checkbox-block
+              %input#accept_booking.checkbox{name: "accept_booking", type: "checkbox", required: "required"}
+              %label{:for => "accept_booking"}
+                %a{:href => "#"}> 利用規約
+                及び
+                %a{:href => "#"}> プライバシーポリシー
+                に同意します。
+            .row.mt-20.clearfix
+              .col-sm-12.col-md-12
+                = f.submit "注文を確定する", class: "button btn btn-primary"
       .col-sm-4.col-md-3.hidden-xs
         .price-summary-wrapper
           %h4.heading.mt-0.text-primary.uppercase 注文内容
