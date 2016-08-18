@@ -2,6 +2,7 @@ class BooksController < ApplicationController
   before_action :check_user_signed_in
 
   def index
+    @books = Book.order('created_at desc').includes(:image)
   end
 
   private
