@@ -62,9 +62,9 @@
                   %span.block.font20.font600.mb-5 $1458
                   %span.font10.line10.block **Best Price Guarantee
       .col-sm-8.col-md-9{:role => "main"}
-        .section-title.text-left
+        .text-left
           %h3
-            ランディングページ・デザインメソッド
+            = @book.title
             %small を購入します。
         .payment-container
           %form
@@ -133,7 +133,8 @@
           %h4.heading.mt-0.text-primary.uppercase 注文内容
           %ul.price-summary-list
             %li
-              %h6.heading.mt-0.mb-0 ランディングページ・デザインメソッド
+              %h6.heading.mt-0.mb-0
+                = @book.title
               %p.font12.text-light デザイン
             %li.divider
             %li
@@ -142,31 +143,19 @@
                 .col-xs-7.col-sm-7
                   本体価格
                 .col-xs-5.col-sm-5.text-right
-                  1200円
+                  #{@book.price}円
               .row.gap-10.mt-10
                 .col-xs-7.col-sm-7
                   送料
                 .col-xs-5.col-sm-5.text-right
-                  200円
-              .row.gap-10.mt-10
-                .col-xs-7.col-sm-7
-                  消費税
-                .col-xs-5.col-sm-5.text-right
-                  96円
+                  送料別
             %li.divider
             %li.text-right.font600.font14
-              1296円
-            %li.divider
-            %li
-              .row.gap-10.font600.font14
-                .col-xs-9.col-sm-9
-                  購入点数
-                .col-xs-3.col-sm-3.text-right
-                  1
+              #{@book.price}円（送料別）
             %li.total-price
               .row.gap-10
                 .col-xs-6.col-sm-6
-                  %h5.heading.mt-0.mb-0.text-white Amount due
-                  %p.font12 合計金額
+                  %h5.heading.mt-0.mb-0.text-white 合計金額
                 .col-xs-6.col-sm-6.text-right
-                  %span.block.font20.font600.mb-5 1200円
+                  %span.block.font20.font600.mb-5 #{@book.price}円
+                  %span（送料別）
