@@ -59,3 +59,4 @@ end
 
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'seed-fu', '~> 2.3'
