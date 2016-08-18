@@ -1,0 +1,409 @@
+/ start hero-header with windows height
+.hero{:style => "background-image:url('images/bookstore.jpg');"}
+  .container
+    .row
+      .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+        %h1.hero-title
+          読んだ技術書は、
+          %br>/
+          次の世代のエンジニアへ。
+        %p.lead エンジニアのための書籍シェアリングサービス
+    .main-search-wrapper.full-width
+      .inner
+        .column-item
+          .form-group
+            %select.select2-multi.form-control{"data-placeholder" => "カテゴリを選択", :name => "destination"}
+              %option{:value => ""} カテゴリを選択
+              %option{:value => "0"} HTML CSS
+              %option{:value => "ruby"} Ruby
+              %option{:value => "javascript"} JavaScript
+              %option{:value => "rails"} Ruby on Rails
+              %option{:value => "php"} PHP
+              %option{:value => "java"} Java
+              %option{:value => "php"} PHP
+        #long-column-item.column-item
+          .form-group
+            %input.form-control{:name => "month", :placeholder => "キーワード"}/
+        .column-item.for-btn
+          .form-group
+            %a.btn.btn-primary.btn-block{:href => "#"} 書籍を検索
+/ end hero-header with windows height
+/
+  <div class="post-hero bg-white">
+  <div class="container">
+  <div class="row">
+  <div class="col-sm-4">
+  <div class="featured-count clearfix">
+  <div class="icon"><i class="pe-7s-bookmarks"></i></div>
+  <div class="content">
+  <h6>蔵書は500冊以上</h6>
+  <span>現在取引されている本は500冊以上。</span>
+  </div>
+  </div>
+  </div>
+  <div class="col-sm-4">
+  <div class="featured-count clearfix">
+  <div class="icon"> <i class="pe-7s-user"></i></div>
+  <div class="content">
+  <h6>安心のメッセージ機能</h6>
+  <span>出品しているユーザーに直接連絡</span>
+  </div>
+  </div>
+  </div>
+  <div class="col-sm-4">
+  <div class="featured-count clearfix">
+  <div class="icon"> <i class="pe-7s-smile"></i></div>
+  <div class="content">
+  <h6>過去に3000冊</h6>
+  <span>累計3000冊以上がtechbookで取引されています。</span>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+/
+  <section>
+  <div class="container">
+  <div class="row">
+  <div class="col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+  <div class="section-title">
+  <h3>豊富なカテゴリーから本を選択</h3>
+  </div>
+  </div>
+  </div>
+  <div class="grid destination-grid-wrapper">
+  <div class="grid-item" data-colspan="10" data-rowspan="10">
+  <a href="result-grid.html" class="top-destination-image-bg" style="background-image:url('images/destination-grid/01.jpg');">
+  <div class="relative">
+  <h4>Turkey</h4>
+  <span>Starting from $322</span>
+  </div>
+  </a>
+  </div>
+  <div class="grid-item" data-colspan="10" data-rowspan="4">
+  <a href="result-grid.html" class="top-destination-image-bg" style="background-image:url('images/destination-grid/02.jpg');">
+  <div class="relative">
+  <h4>Croatia</h4>
+  <span>Starting from $322</span>
+  </div>
+  </a>
+  </div>
+  <div class="grid-item" data-colspan="5" data-rowspan="6">
+  <a href="result-grid.html" class="top-destination-image-bg" style="background-image:url('images/destination-grid/03.jpg');">
+  <div class="relative">
+  <h4>USA</h4>
+  <span>Starting from $322</span>
+  </div>
+  </a>
+  </div>
+  <div class="grid-item" data-colspan="5" data-rowspan="6">
+  <a href="result-grid.html" class="top-destination-image-bg" style="background-image:url('images/destination-grid/04.jpg');">
+  <div class="relative">
+  <h4>Emirates</h4>
+  <span>Starting from $322</span>
+  </div>
+  </a>
+  </div>
+  </div>
+  </div>
+  </section>
+%section.bg-light.new-books
+  .container
+    .row
+      .col-sm-8.col-md-6.col-sm-offset-2.col-md-offset-3
+        .section-title
+          %h3 新着の技術書一覧
+          %p 新着で出品された技術書の一覧です。
+    .GridLex-gap-30-wrappper.package-grid-item-wrapper
+      .GridLex-grid-noGutter-equalHeight
+        .GridLex-col-3_sm-4_xs-12.mb-30
+          .package-grid-item
+            %a{:href => "detail-page.html"}
+              .image
+                %img{:alt => "Tour Package", :src => "images/books/book1.png"}/
+                .absolute-in-image
+                  .duration
+                    %span デザイン
+              .content.clearfix
+                %h5 ランディングページメソッド・デザインメソッド
+                .rating-wrapper
+                  .raty-wrapper
+                    .star-rating-read-only{"data-rating-score" => "4.0"}
+                    %span / 7 review
+                .absolute-in-content
+                  %span.btn
+                    %i.fa.fa-heart-o
+                  .price $1422
+        .GridLex-col-3_sm-4_xs-12.mb-30
+          .package-grid-item
+            %a{:href => "detail-page.html"}
+              .image
+                %img{:alt => "Tour Package", :src => "images/books/book2.png"}/
+                .absolute-in-image
+                  .duration
+                    %span JAVA
+              .content.clearfix
+                %h5 すっきりわかるJAVA入門
+                .rating-wrapper
+                  .raty-wrapper
+                    .star-rating-read-only{"data-rating-score" => "3.5"}
+                    %span / 7 review
+                .absolute-in-content
+                  %span.btn
+                    %i.fa.fa-heart-o
+                  .price $1422
+        .GridLex-col-3_sm-4_xs-12.mb-30
+          .package-grid-item
+            %a{:href => "detail-page.html"}
+              .image
+                %img{:alt => "Tour Package", :src => "images/books/book3.jpeg"}/
+                .absolute-in-image
+                  .duration
+                    %span PHP
+              .content.clearfix
+                %h5 LeaningPHP5
+                .rating-wrapper
+                  .raty-wrapper
+                    .star-rating-read-only{"data-rating-score" => "4.5"}
+                    %span / 7 review
+                .absolute-in-content
+                  %span.btn
+                    %i.fa.fa-heart-o
+                  .price $1422
+        .GridLex-col-3_sm-4_xs-12.mb-30
+          .package-grid-item
+            %a{:href => "detail-page.html"}
+              .image
+                %img{:alt => "Tour Package", :src => "images/books/book4.png"}/
+                .absolute-in-image
+                  .duration
+                    %span Ruby on Rails
+              .content.clearfix
+                %h5 パーフェクトRuby on Rails
+                .rating-wrapper
+                  .raty-wrapper
+                    .star-rating-read-only{"data-rating-score" => "5.0"}
+                    %span / 7 review
+                .absolute-in-content
+                  %span.btn
+                    %i.fa.fa-heart-o
+                  .price $1422
+        .GridLex-col-3_sm-4_xs-12.mb-30
+          .package-grid-item
+            %a{:href => "detail-page.html"}
+              .image
+                %img{:alt => "Tour Package", :src => "images/books/book5.jpg"}/
+                .absolute-in-image
+                  .duration
+                    %span その他
+              .content.clearfix
+                %h5 テキストエディタAtom入門
+                .rating-wrapper
+                  .raty-wrapper
+                    .star-rating-read-only{"data-rating-score" => "4.5"}
+                    %span / 7 review
+                .absolute-in-content
+                  %span.btn
+                    %i.fa.fa-heart-o
+                  .price $1422
+        .GridLex-col-3_sm-4_xs-12.mb-30
+          .package-grid-item
+            %a{:href => "detail-page.html"}
+              .image
+                %img{:alt => "Tour Package", :src => "images/books/book6.jpeg"}/
+                .absolute-in-image
+                  .duration
+                    %span Ruby on Rails
+              .content.clearfix
+                %h5 エンタープライズRails
+                .rating-wrapper
+                  .raty-wrapper
+                    .star-rating-read-only{"data-rating-score" => "4.5"}
+                    %span / 7 review
+                .absolute-in-content
+                  %span.btn
+                    %i.fa.fa-heart-o
+                  .price $1422
+        .GridLex-col-3_sm-4_xs-12.mb-30
+          .package-grid-item
+            %a{:href => "detail-page.html"}
+              .image
+                %img{:alt => "Tour Package", :src => "images/books/book7.jpg"}/
+                .absolute-in-image
+                  .duration
+                    %span JavaScript
+              .content.clearfix
+                %h5 ノンプログラマのためのJavaScript
+                .rating-wrapper
+                  .raty-wrapper
+                    .star-rating-read-only{"data-rating-score" => "5.0"}
+                    %span / 7 review
+                .absolute-in-content
+                  %span.btn
+                    %i.fa.fa-heart-o
+                  .price $1422
+        .GridLex-col-3_sm-4_xs-12.mb-30
+          .package-grid-item
+            %a{:href => "detail-page.html"}
+              .image
+                %img{:alt => "Tour Package", :src => "images/books/book8.jpg"}/
+                .absolute-in-image
+                  .duration
+                    %span デザイン
+              .content.clearfix
+                %h5 デザインの教室
+                .rating-wrapper
+                  .raty-wrapper
+                    .star-rating-read-only{"data-rating-score" => "4.0"}
+                    %span / 7 review
+                .absolute-in-content
+                  %span.btn
+                    %i.fa.fa-heart-o
+                  .price $1422
+        .GridLex-col-3_sm-4_xs-12.mb-30
+          .package-grid-item
+            %a{:href => "detail-page.html"}
+              .image
+                %img{:alt => "Tour Package", :src => "images/books/book9.jpg"}/
+                .absolute-in-image
+                  .duration
+                    %span デザイン
+              .content.clearfix
+                %h5 だから、そのデザインはダメなんだ。
+                .rating-wrapper
+                  .raty-wrapper
+                    .star-rating-read-only{"data-rating-score" => "4.5"}
+                    %span / 7 review
+                .absolute-in-content
+                  %span.btn
+                    %i.fa.fa-heart-o
+                  .price $1422
+        .GridLex-col-3_sm-4_xs-12.mb-30
+          .package-grid-item
+            %a{:href => "detail-page.html"}
+              .image
+                %img{:alt => "Tour Package", :src => "images/books/book10.jpg"}/
+                .absolute-in-image
+                  .duration
+                    %span JavaScript
+              .content.clearfix
+                %h5 JavaScript: The Good Parts
+                .rating-wrapper
+                  .raty-wrapper
+                    .star-rating-read-only{"data-rating-score" => "4.5"}
+                    %span / 7 review
+                .absolute-in-content
+                  %span.btn
+                    %i.fa.fa-heart-o
+                  .price $1422
+        .GridLex-col-3_sm-4_xs-12.mb-30
+          .package-grid-item
+            %a{:href => "detail-page.html"}
+              .image
+                %img{:alt => "Tour Package", :src => "images/books/book11.jpeg"}/
+                .absolute-in-image
+                  .duration
+                    %span Ruby
+              .content.clearfix
+                %h5 たのしいRuby 第４版
+                .rating-wrapper
+                  .raty-wrapper
+                    .star-rating-read-only{"data-rating-score" => "4.5"}
+                    %span / 7 review
+                .absolute-in-content
+                  %span.btn
+                    %i.fa.fa-heart-o
+                  .price $1422
+        .GridLex-col-3_sm-4_xs-12.mb-30
+          .package-grid-item
+            %a{:href => "detail-page.html"}
+              .image
+                %img{:alt => "Tour Package", :src => "images/books/book12.jpeg"}/
+                .absolute-in-image
+                  .duration
+                    %span Swift
+              .content.clearfix
+                %h5 絶対に挫折しないSwift
+                .rating-wrapper
+                  .raty-wrapper
+                    .star-rating-read-only{"data-rating-score" => "4.5"}
+                    %span / 7 review
+                .absolute-in-content
+                  %span.btn
+                    %i.fa.fa-heart-o
+                  .price $1422
+%section.overflow-hidden.why-us-half-image-wrapper
+  .GridLex-grid-noGutter-equalHeight
+    .GridLex-col-6_sm-12
+      .why-us-half-image-content
+        .section-title.text-left
+          %h3 techbookだからできること
+          %p techbookならではのサービスを紹介します。
+        .featured-item
+          %h4 中古書籍なのでリーズナブル
+          .content.clearfix
+            .icon
+              %i.pe-7s-users
+            %p 新品で買うと高額な技術書も、techbookで買うことでリーズナブルな価格で入手することができます。
+        .featured-item
+          %h4 簡単クレジットカード決済
+          .content.clearfix
+            .icon
+              %i.pe-7s-home
+            %p 書店に行かなくてもオンラインで簡単に購入していただけます。
+        .featured-item
+          %h4 出品者のレビューが見られるので安心
+          .content.clearfix
+            .icon
+              %i.pe-7s-car
+            %p 出品者のレビューをたくさんある技術書の中で比較するための指標としてお使いいただけます。
+    .GridLex-col-6_sm-12.image-bg
+      .image-bg{:style => "background-image:url('images/books_on_desk2.jpg');"}
+%section.bg-light
+  .container
+    .row
+      .col-sm-8.col-md-6.col-sm-offset-2.col-md-offset-3
+        .section-title
+          %h3 利用者の声
+          %p
+    .testimonial-wrapper
+      .row
+        .col-xs-12.col-sm-12.col-md-6
+          .testimonial-item.clearfix
+            .image
+              %img{:alt => "yamane", :src => "images/testimonial-01.png"}/
+            .content
+              %h4 山根祐亮
+              %h6 Railsエンジニア
+              %p RubyやJavaScriptの本を買わせていただきました。自分がまだエンジニアとしての歴が浅くてお金に余裕がなかったころ、いつも人から借りて本を技術書でいたので、今こういったサービスで本を買うことができるエンジニアは幸せだと思います。
+        .col-xs-12.col-sm-12.col-md-6
+          .testimonial-item.clearfix
+            .image
+              %img{:alt => "maehira", :src => "images/testimonial-02.png"}/
+            .content
+              %h4 前平亮祐
+              %h6 デザイナー
+              %p デザインの本って新品だととても高いので、助かっています。辞書代わりにつねに手元においておきたい技術書こそ、ハードで買いましょう！
+.newsletter-wrapper
+  .container
+    .flex-row.flex-align-middle.flex-gap-30
+      .flex-column.flex-sm-12
+        .newsletter-text.clearfix
+          .icon
+            %i.pe-7s-mail
+          .content
+            %h3 ニュースレターを受け取る
+            %p メールアドレスを登録して、最新の技術書情報などをチェックしましょう。
+      .flex-columns.flex-sm-12
+        .newsletter-form
+          %form
+            .input-group
+              %input.form-control{:placeholder => "Emailアドレス", :type => "text"}/
+              %span.input-group-btn
+                %button.btn.btn-primary{:type => "button"}
+                  登録
+                  %i.fa.fa-long-arrow-right
+.overflow-hidden
+  .instagram-wrapper
+    #instagram.instagram
