@@ -3,16 +3,6 @@
     .row
       .col-sm-10.col-sm-offset-1.col-md-6.col-md-offset-3
         %h1.hero-title 書籍一覧
-/ end Page title
-.breadcrumb-wrapper.bg-light-2
-  .container
-    %ol.breadcrumb-list.booking-step
-      %li
-        %a{:href => ""} トップ
-      %li
-        %span カテゴリ：
-        %a{:href => "#"} デザイン
-        %span キーワード：デザイン
 .content-wrapper
   .container
     .row
@@ -22,19 +12,20 @@
             .sidebar-search-header
               %h4 検索
             .sidebar-search-content
-              .form-group
-                %select.select2-multi.form-control{"data-placeholder" => "カテゴリを選択", :name => "destination"}
-                  %option{:value => ""} カテゴリを選択
-                  %option{:value => "0"} HTML CSS
-                  %option{:value => "ruby"} Ruby
-                  %option{:value => "javascript"} JavaScript
-                  %option{:value => "rails"} Ruby on Rails
-                  %option{:value => "php"} PHP
-                  %option{:value => "java"} Java
-                  %option{:value => "php"} PHP
-              .form-group
-                %input.form-control{:name => "month", :placeholder => "キーワード"}/
-              %a.btn.btn-primary.btn-block{:href => "#"} 検索
+              = form_tag(search_index_path, method: :get) do
+                .form-group
+                  %select.select2-multi.form-control{"data-placeholder" => "カテゴリを選択", :name => "destination"}
+                    %option{:value => ""} カテゴリを選択
+                    %option{:value => "0"} HTML CSS
+                    %option{:value => "ruby"} Ruby
+                    %option{:value => "javascript"} JavaScript
+                    %option{:value => "rails"} Ruby on Rails
+                    %option{:value => "php"} PHP
+                    %option{:value => "java"} Java
+                    %option{:value => "php"} PHP
+                .form-group
+                  = text_field_tag :keyword, "",class:'form-control', placeholder: 'キーワード'
+                = submit_tag "検索", class: "btn btn-primary btn-block"
       .col-sm-8.col-md-9
         .sorting-wrappper
           .sorting-header
