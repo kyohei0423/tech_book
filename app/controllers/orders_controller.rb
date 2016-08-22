@@ -7,7 +7,11 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    render :new unless @order.save
+    if @order.save
+      BookMailer.send_when_purchase(current_user, @book).deliver
+    else
+      render :new
+    end
   end
 
   private
