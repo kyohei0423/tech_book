@@ -2,7 +2,17 @@
   .container
     .row
       .col-sm-10.col-sm-offset-1.col-md-6.col-md-offset-3
-        %h1.hero-title 書籍一覧
+        %h1.hero-title 検索結果一覧
+/ end Page title
+.breadcrumb-wrapper.bg-light-2
+  .container
+    %ol.breadcrumb-list.booking-step
+      %li
+        %a{:href => ""} トップ
+      %li
+        %span カテゴリ：
+        %a{:href => "#"} デザイン
+        %span キーワード：デザイン
 .content-wrapper
   .container
     .row
@@ -12,7 +22,7 @@
             .sidebar-search-header
               %h4 検索
             .sidebar-search-content
-              = form_tag(search_index_path, method: :get) do
+              = form_tag search_index_path, method: :get do
                 .form-group
                   %select.select2-multi.form-control{"data-placeholder" => "カテゴリを選択", :name => "destination"}
                     %option{:value => ""} カテゴリを選択
