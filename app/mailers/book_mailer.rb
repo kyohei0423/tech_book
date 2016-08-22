@@ -1,5 +1,5 @@
 class BookMailer < ApplicationMailer
-  default from: Settings.mailer[:email_address]
+  default from: ENV['EMAIL_ADDRESS']
 
   def send_when_purchase(user, book)
     @user = user
